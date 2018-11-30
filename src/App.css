@@ -21,7 +21,14 @@
 .App-link {
   color: #61dafb;
 }
-
+.green {
+  font-size: 50px;
+  color: green;
+}
+.img-success {
+  height: 225px;
+  width: 240px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
