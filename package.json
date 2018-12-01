@@ -1,7 +1,7 @@
 {
   "name": "finding_falcone",
-  "version": "0.1.0",
-  "homepage": "https://github.com/ShankarRM/FindFalcone",
+  "version": "0.1.1",
+  "homepage": "/FF",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.0.1",
