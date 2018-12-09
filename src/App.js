@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LaunchPad from "./component/LaunchPad";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./App.css";
 import DisplayMessage from "./component/DisplayMessage";
 class App extends Component {
@@ -17,13 +18,8 @@ class App extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <a
-                    className="nav-link"
-                    rel="noopener noreferrer"
-                    href="https://www.geektrust.in/"
-                    target="_blank"
-                  >
+                <li className="nav-item">
+                  <a className="nav-link" href="https://www.geektrust.in/">
                     GeekTrust Home
                   </a>
                 </li>
@@ -31,7 +27,6 @@ class App extends Component {
             </div>
           </nav>
           <hr />
-
           <Route exact path="/" component={LaunchPad} />
           <Route exact path="/DisplayMessage" component={DisplayMessage} />
         </div>

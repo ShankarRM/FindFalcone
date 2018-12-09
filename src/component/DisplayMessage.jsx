@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 
 class DisplayMessage extends Component {
-  state = {};
-  constructor(props) {
-    super();
-    debugger;
-  }
   render() {
+    if (this.props.location.state === undefined) {
+      return <div />;
+    }
     var Message =
       this.props.location.state.Message.status === "success" ? (
         <div className="row justify-content-center">
@@ -15,7 +13,7 @@ class DisplayMessage extends Component {
               <div className="card-body">
                 <h5 className="card-title">Result</h5>
                 <p className="card-text">
-                  <i class="far fa-grin fa-9x green align-middle" />
+                  <i className="far fa-grin fa-9x green align-middle" />
                   <span className="pl-4 text-justify">
                     Success! Congratulations on finding Falcone King Shan is
                     mighty pleased.
@@ -48,7 +46,7 @@ class DisplayMessage extends Component {
         <div className="row">
           <span className="col-md-12">
             <h1>Not Found !</h1>
-            <i class="far fa-frown fa-3x" />
+            <i className="far fa-frown fa-3x" />
           </span>
         </div>
       );

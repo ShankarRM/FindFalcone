@@ -57,7 +57,6 @@ class LaunchPad extends Component {
   onPlanetChange = (destination, selectedPlanet) => {
     const Destinations = [...this.state.Destinations];
     if (selectedPlanet) {
-      console.log(this.state.Planets);
       const index = Destinations.findIndex(i => i.value === destination);
 
       const indexofselectedPlanet = this.state.Planets.indexOf(selectedPlanet);
@@ -111,7 +110,7 @@ class LaunchPad extends Component {
       Planets,
       selectedPlanet: "",
       travelTime,
-      isDisabled: !visitedPlanet.length === 4 && visitedVehicle.length === 4
+      isDisabled: !(visitedPlanet.length === 4 && visitedVehicle.length === 4)
     });
   };
 
@@ -159,7 +158,7 @@ class LaunchPad extends Component {
                             distance={0}
                           />
                         ) : (
-                          "Please Select Planet..."
+                          ""
                         )}
                       </div>
                     </div>

@@ -26,7 +26,7 @@ class Planet extends Component {
       ? []
       : this.props.value.filter(
           planet =>
-            planet.name.toLowerCase().slice(0, inputLength) === inputValue
+            planet.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
         );
   };
   onSuggestionsFetchRequested = ({ value }) => {
@@ -39,13 +39,13 @@ class Planet extends Component {
       value: newValue
     });
     const index = this.props.value.findIndex(p => p.name === newValue);
+
+    var currentDestination = event.target.id.match(/[a-z]+[0-9]/gi);
+
     const destination =
-      event.target.parentElement.parentElement.id === ""
-        ? event.target.id
-        : event.target.parentElement.parentElement.id;
+      currentDestination !== null ? currentDestination[0] : "";
     this.props.onChange(destination, this.props.value[index]);
   };
-  // Autosuggest will call this function every time you need to clear suggestions.
   onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: []
